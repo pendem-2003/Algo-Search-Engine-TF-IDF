@@ -1,0 +1,92 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Header with the search engine name */
+  .header {
+    background-color: #007BFF;
+    padding: 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  .header h1 {
+    font-size: 36px;
+  }
+  
+  /* Main container for the form and results */
+  .container {
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling the form */
+  .form {
+    margin-bottom: 30px;
+  }
+  
+  .form form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form form input {
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .form form input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .form form input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Results section */
+  .results {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Each result card */
+  .result-card {
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .result-card a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  .result-card a:hover {
+    text-decoration: underline;
+  }
+  
+  .result-card p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 8px;
+  }
+  

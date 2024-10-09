@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pendem Algo Search Engine</title>
+    <style>
+      /* General reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Body styling */
+      body {
+        background-color: #f4f4f9;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Header styling */
+      header {
+        background-color: #6200ea;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      /* Container for the entire search engine content */
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Search form container */
+      .form-container {
+        margin-bottom: 40px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Search form styling */
+      .search-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .form-label {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      /* Styling the search input field */
+      .search-input {
+        width: 80%;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+
+      /* Styling the search button */
+      .search-button {
+        background-color: #6200ea;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .search-button:hover {
+        background-color: #3700b3;
+      }
+
+      /* Results container styling */
+      .results-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Styling for individual result items */
+      .result-item {
+        margin-bottom: 20px;
+        padding: 15px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .result-link {
+        font-size: 1.1rem;
+        color: #6200ea;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .result-link:hover {
+        text-decoration: underline;
+      }
+
+      .result-score {
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      /* Ensure the page is responsive */
+      @media (max-width: 768px) {
+        .container {
+          width: 95%;
+        }
+
+        .search-input {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header section for the search engine title -->
+    <header>
+      <h1>Pendem Algo Search Engine</h1>
+    </header>
+
+    <!-- Main content area -->
+    <div class="container">
+      <!-- Search form container -->
+      <div class="form-container">
+        <form method="POST" class="search-form">
+          {{ form.hidden_tag() }}
+          <label for="search" class="form-label">{{ form.search.label }}</label>
+          {{ form.search(class="search-input") }}
+          {{ form.submit(class="search-button") }}
+        </form>
+      </div>
+
+      <!-- Results container -->
+      <div class="results-container">
+        {% if results %}
+        <h2>Search Results</h2>
+        {% for result in results %}
+        <div class="result-item">
+          <a href="{{ result['Question Link'] }}" class="result-link">{{ result['Question Link'] }}</a>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>
